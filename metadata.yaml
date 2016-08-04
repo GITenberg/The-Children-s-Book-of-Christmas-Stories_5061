@@ -1,0 +1,44 @@
+_repo: The-Children-s-Book-of-Christmas-Stories_5061
+_version: 0.0.1
+creator:
+  editors:
+  - agent_name: Skinner, Ada M. (Ada Maria)
+    alias: Skinner, Ada Maria
+    birthdate: 1878
+    gutenberg_agent_id: '1679'
+    url: http://www.gutenberg.org/2009/agents/1679
+  - agent_name: Dickinson, Asa Don
+    birthdate: 1876
+    deathdate: 1960
+    gutenberg_agent_id: '1678'
+    url: http://www.gutenberg.org/2009/agents/1678
+description: ''
+gutenberg_bookshelf: Christmas
+gutenberg_issued: '2004-02-01'
+gutenberg_type: Text
+identifiers:
+  gutenberg: '5061'
+language: en
+publisher: Project Gutenberg
+rights: Public domain in the USA.
+rights_url: http://creativecommons.org/about/pdm
+subjects:
+- !lcsh 'Christmas stories'
+- !lcc 'PS'
+- !lcc 'PZ'
+- GITenberg
+tableOfContents: Christmas at Fezziwig's Warehouse -- The Fir Tree -- The Christmas
+  Masquerade -- The Shepherds and the Angels -- The Telltale Tile -- Little Girl's
+  Christmas -- A Christmas Matinee -- Toinette and the Elves -- The Voyage of the
+  Wee Red Cap -- A Story of the Christ-Child -- Jimmy Scarecrow's Christmas -- Why
+  the Chimes Rang -- The Birds' Christmas -- The Little Sister's Vacation -- Little
+  Wolff's Wooden Shoes -- Christmas in the Alley -- A Christmas Star -- The Queerest
+  Christmas -- Old Father Christmas -- A Christmas Carol -- How Christmas Came to
+  the Santa Maria Flats -- The Legend of Babouscka -- Christmas in the Barn -- The
+  Philanthropist's Christmas -- The First Christmas-Tree -- The First New England
+  Christmas -- The Cratchits' Christmas Dinner -- Christmas in Seventeen Seventy-Six
+  -- Christmas Under the Snow -- Mr. Bluff's Experiences of Holidays -- Master Sandy's
+  Snapdragon -- A Christmas Fairy -- The Greatest of These -- Little Gretchen and
+  the Wooden Shoe -- Christmas on Big Rattle.
+title: The Children's Book of Christmas Stories
+url: http://www.gutenberg.org/ebooks/5061

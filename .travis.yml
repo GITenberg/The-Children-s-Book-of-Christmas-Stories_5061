@@ -1,0 +1,61 @@
+sudo: required
+dist: trusty
+language: ruby
+
+before_install:
+before_install:
+- gem install asciidoctor -v 1.5.2
+- gem install tilt
+- sudo pip install git+https://github.com/gitenberg-dev/gitberg
+- sudo pip install pillow
+- sudo pip install cssutils
+- sudo pip install docutils
+- sudo pip install roman
+- sudo pip install git+https://github.com/gitenberg-dev/pg-epubmaker
+script:
+- VERSION=`ruby -e "require 'yaml'; meta = YAML.load_file('metadata.yaml'); puts meta['_version'];"`
+- git clone https://github.com/gitenberg-dev/asciidoctor-htmlbook.git
+- sudo pip install -r asciidoctor-htmlbook/gitberg-machine/requirements.txt
+
+- /usr/bin/python -c "from gitenberg import travis; travis.build_epub()"
+- ebook-convert book.epub book.mobi
+- xvfb-run ebook-convert book.epub book.pdf
+branches:
+  only:
+  - master
+notifications:
+  webhooks:
+    urls:
+      - https://unglue.it/api/travisci/webhook
+    on_success: always
+    on_failure: never
+    on_start: never
+deploy:
+  skip_cleanup: true
+  provider: releases
+  api_key:
+    secure: UzA6oyyFsRUFOBkm99w3CSqsa3sh1QTNyvUwv9TSfmGKF0UD+WCjdAmYyf1u7Wo/1GS0sFgRtK2wtPdyeGl6+xBHF31bVfUjfgYT3g7mXCrD2D1U3xUMmQrVKXiCS+7d02zbPNl2LTv3vD6N3cc4x3IJGM+f2XrKtLW+TqM9Wl22Q9sVplTZaZSdw0b30ptJlL+clMJcl/CDzpJHs3640VrpVeNeBM6kR+9YBaL6hKe0VoHaVO1uTJZNYfi9urrlLx3X+JEH84sCRazemsZ97+GGEfd6yJuSD6l5Tvy20Cxrb4prz9xxC3NelXlY1NDctifntg5rp4XXNsLD70QluLaP/EpwVlxFdf301oq3TdNhZ70Hlb+Ok0kSHTmpkOe8pZGCRcZNHcPXzfDW4KFmK/3ixKXMaHNAvEEhXmP9IFUnyyv7FXDfdMJchIgPj1e6Qr8L0UqOhFBBoE01xb2k07e0AQjYApCf3UiHgeaDKd99jMgD4xuuDeSyP7P8y/AnkeQ75h6SZ+uYWsjfa9jcpi5ge1CMbTXd74bXOMi+vCLx8WMsbGksKN1dVbrVdkqVtDbEoT+GSDyJxdqkrIFifQif++yQeLe18vUu0t+6skRRzmIEW9f+g1Gksl4fe6pb/vQInQ0WMnPFXVj0MdZyU4mtj+W7jWSd/dyDjGD4aWQ=
+  file:
+    - book.epub
+    - book.mobi
+    - book.pdf
+  "on":
+    repo: GITenberg/The-Children-s-Book-of-Christmas-Stories_5061
+addons:
+  apt:
+    packages:
+    - xsltproc
+    - xvfb
+    - calibre
+    - python-pip
+    - git
+    - python-dev
+    - libjpeg-dev
+    - libpng-dev
+    - libfreetype6
+    - libfreetype6-dev
+    - zlib1g-dev
+    - python-lxml
+    - libxml2-dev
+    - libxslt1-dev
+    - tidy
